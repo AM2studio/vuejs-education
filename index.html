@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js education - What is Vue.js</title>
+    <script src="js/vue.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity .5s
+        }
+
+        .fade-enter, .fade-leave-to {
+            opacity: 0
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="app">
+        <div class="col-md-3">
+            <img src="https://vuejs.org/images/logo.png" alt="Vue logo" class="img-responsive">
+        </div>
+        <div class="col-md-9">
+            <h2>What is Vue.js?</h2>
+            <ul>
+                <li>Vue.js is MVVM framework like React.js or Angular.</li>
+            </ul>
+            <p>MVVM stands for Model View View-Model which in practice means that framework's main concern is to maintain consistency between Model (Javascript object) and View (DOM presentation).</p>
+            <p>In v2 Vue.js implement VirtualDOM pattern to do it's magic. It means that all DOM updates are first done in memory and then 'diffed' with current DOM state, afte that only changes are propagated into DOM.</p>
+
+            <h2>Why I love Vue.js</h2>
+            <ul>
+                <li>It really made me enjoy implementing business logic on frontend (think: Baskets with dynamic calculations, discounts etc.)</li>
+                <li>Component based approach</li>
+                <li>Data driven real-time dashboards is a breeze because of watchers and computed properties</li>
+                <li>Data driven DOM</li>
+                <li>Paradigm shift</li>
+            </ul>
+            <h2>Why I choose Vue.js over React.js/Angular/Ember...?</h2>
+            <ul>
+                <li>As Laravel's official frontend framework Vue.js gained a lot of exposure</li>
+                <li>Lightweight - you can use it to simply spice up HTML or use it as full-blown application framework</li>
+                <li>Personal preference. After skimming through Angular and React.js docs Vue.js simply clicked for me.</li>
+                <li>Low entry point barrier. Simple, easy and elegant.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

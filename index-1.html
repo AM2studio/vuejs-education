@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js education - Lesson 1 - Data Binfing</title>
+    <script src="js/vue.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<div class="container">
+    <div id="app">
+        <div class="col-md-3">
+            <img src="https://vuejs.org/images/logo.png" alt="Vue logo" class="img-responsive">
+        </div>
+        <div class="col-md-9">
+            <h2>1. Basics</h2>
+            <h3>1.1. Text interpolation</h3>
+            <p>{{ greeting }}</p>
+
+            <h3>1.2. 2-way Data binding</h3>
+            <input type="text" class="form-control" placeholder="Type here..." v-model="greeting2">
+            <h4>Binded here:</h4>
+            <p>{{ greeting2 }}</p>
+
+            <h3>1.3. Class and style binding</h3>
+            <h4 :class="someClass" :style="someStyle">Add me some class</h4>
+            <input type="text" class="form-control" placeholder="Class" v-model="someClass">
+            <input type="text" class="form-control" placeholder="Style" v-model="someStyle">
+
+            <h3>1.4. Attribute binding</h3>
+
+            <img :src="srcAttribute" />
+            <input type="text" class="form-control" placeholder="Src Attribute" v-model="srcAttribute">
+            <small>try this: http://vignette2.wikia.nocookie.net/robocraft/images/2/26/Smile.png</small>
+
+            <h3>1.5. Event handling</h3>
+            <button @click="doSomething">Do something</button>
+            <h4>1.5.1. Event modifiers</h4>
+            <pre>
+                <code>
+&lt;!-- the click event's propagation will be stopped --&gt;
+&lt;a v-on:click.stop="doThis"&gt;&lt;/a&gt;
+&lt;!-- the submit event will no longer reload the page --&gt;
+&lt;form v-on:submit.prevent="onSubmit"&gt;&lt;/form&gt;
+&lt;!-- modifiers can be chained --&gt;
+&lt;a v-on:click.stop.prevent="doThat"&gt;&lt;/a&gt;
+&lt;!-- just the modifier --&gt;
+&lt;form v-on:submit.prevent&gt;&lt;/form&gt;
+&lt;!-- use capture mode when adding the event listener --&gt;
+&lt;!-- i.e. an event targeting an inner element is handled here before being handled by that element --&gt;
+&lt;div v-on:click.capture="doThis"&gt;...&lt;/div&gt;
+&lt;!-- only trigger handler if event.target is the element itself --&gt;
+&lt;!-- i.e. not from a child element --&gt;
+&lt;div v-on:click.self="doThat"&gt;...&lt;/div&gt;
+                </code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            greeting: 'Welcome to your Vue.js app!',
+            greeting2: null,
+            someClass: null,
+            someStyle: null,
+            srcAttribute: null
+        },
+        methods: {
+            doSomething: function () {
+                alert('Do Something!');
+            }
+        }
+    })
+</script>
+</body>
+</html>
